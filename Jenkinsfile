@@ -95,10 +95,10 @@ pipeline {
         sh "git commit -m 'update the image tag'"
         sh "git branch -M main"
 
-        stage("Push to Git Repository") {
-            steps {
-                withCredentials([gitUsernamePassword(credentialsId: githubCredential)]) {
-                    sh "git push -u origin main"
+    stage("Push to Git Repository") {
+        steps {
+            withCredentials([gitUsernamePassword(credentialsId: githubCredential)]) {
+                sh "git push -u origin main"
                 }
             }
         }
