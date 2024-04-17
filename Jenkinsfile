@@ -89,12 +89,13 @@ pipeline {
         // 이미지 태그 변경 후 메인 브랜치에 푸시
         sh "git config --global user.email ${gitEmail}"
         sh "git config --global user.name ${gitName}"
+        sh "git config --global init.defaultBranch main"
         sh "cd prod && kustomize edit set image ${awsecrRegistry}:${currentBuild.number}"
         sh "git add -A"
         sh "git status"
         sh "git commit -m 'update the image tag'"
-        sh "git branch -M main"
-        sh "git push -u origin main"
+        sh "git branch main"
+        sh "git push origin main"
         
       }
     }
