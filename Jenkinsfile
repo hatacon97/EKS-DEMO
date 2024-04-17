@@ -94,7 +94,7 @@ pipeline {
         sh "git add -A"
         sh "git status"
         sh "git commit -m 'update the image tag'"
-        sh "git branch main"
+        
         sh "git push origin main"
         
       }
