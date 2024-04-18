@@ -113,6 +113,7 @@ pipeline {
                   //  slackSend (channel: "#app-build-state", color: '#0AC9FF', message: "SUCCESS: K8S Manifest Update ${currentBuild.number}")
                 }
             }     
+      stop
     }
   }
 }
