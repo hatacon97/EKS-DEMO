@@ -100,8 +100,10 @@ pipeline {
     stage('Push to Git Repository') {
       steps {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: githubCredential, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
-             sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/hatacon97/EKS-DEMO.git"       
-        post {
+          sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/hatacon97/EKS-DEMO.git"       
+        }
+      }
+      post {
                 failure {
                     echo 'K8S Manifest failure'
                   //  slackSend (channel: "#app-build-state", color: '#FF0000', message: "FAILED: K8S Manifest Update ${currentBuild.number}")
