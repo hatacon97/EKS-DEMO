@@ -19,7 +19,7 @@ spec:
     spec:
       containers:
       - image: 793888778904.dkr.ecr.ap-northeast-2.amazonaws.com/eks-demo-repo
-        name: ipnginx
+        name: nginx
         ports:
         - containerPort: 80
 status: {}
