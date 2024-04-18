@@ -101,7 +101,6 @@ pipeline {
       steps {
         withCredentials([[$class: 'UsernamePasswordMultiBinding', credentialsId: githubCredential, usernameVariable: 'GIT_USERNAME', passwordVariable: 'GIT_PASSWORD']]) {
           sh "git push https://${GIT_USERNAME}:${GIT_PASSWORD}@github.com/hatacon97/EKS-DEMO.git"
-          sh "stop"
         }
       }
       post {
