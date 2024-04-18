@@ -92,7 +92,7 @@ pipeline {
         sh "cd prod && sed -i 's/eks-demo-repo:.*/eks-demo-repo:${currentBuild.number}/g' deployment.yaml"
         sh "git add -A"
         sh "git status"
-        sh "git commit -m 'update the image tag'"
+        sh "git commit -m 'update the image tagg'"
         sh "git branch -M main"
               }
     }
